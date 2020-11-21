@@ -1,0 +1,21 @@
+import tkinter as tk
+from pathlib import Path
+
+root = tk.Tk()
+root.geometry("400x240")
+
+def getInput():
+    result=a.get("1.0","end")
+    file = open('yesimnoob.py', 'w')
+    file.write(result)
+    file.close
+    print(exec(Path("yesimnoob.py").read_text()))
+    
+a=tk.Text(root, height=10)
+a.pack()
+btn = tk.Button(root, height=1.5, width=15, text="파일 생성& 실행", command=getInput)
+
+btn.pack()
+
+root.mainloop()
+
